@@ -3,66 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Surprise For Zuzu</title>
+  <title>Welcome, Zuzu!</title>
   <style>
     body {
-      background-color: #ffe4e1;
-      color: #ff69b4;
+      margin: 0;
+      padding: 0;
       font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #ffe4e1 url('https://www.transparenttextures.com/patterns/flowers.png');
+      color: #ff69b4;
+    }
+
+    header {
+      background-color: #ffb6c1;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .tabs a {
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      background-color: #ff69b4;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .tabs a:hover {
+      background-color: #ff1493;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .photos .photo {
+      text-align: center;
+      background: #fff;
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .photos .photo img {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .quotes {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      height: 100vh;
-    }
-    .gif-container {
-      position: relative;
-      text-align: center;
-      max-width: 90%;
-    }
-    .gif-container img {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-    .speech-bubble {
-      position: absolute;
-      top: -20px;
-      right: -30px;
-      background: #fff;
-      border-radius: 10px;
-      padding: 15px;
+      gap: 15px;
       font-size: 18px;
-      font-weight: bold;
-      color: #ff69b4;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-      transform: rotate(-10deg);
+      line-height: 1.6;
+      color: #ff1493;
     }
-    .speech-bubble::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 30px;
-      border-width: 10px;
-      border-style: solid;
-      border-color: #fff transparent transparent transparent;
+
+    .quotes span {
+      font-size: 24px;
     }
+
     footer {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #ff4081;
       text-align: center;
+      padding: 10px;
+      background-color: #ffb6c1;
+      font-size: 14px;
+      color: #ff69b4;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="gif-container">
-    <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTlrZ29zcTB5cmFuaTlobTloZjcxbTkxcXhweDg2MGxxOXBoMzNuZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UkfUod3TFW66J2BWKK/giphy.gif" alt="I Love You GIF">
-    <div class="speech-bubble">I love you, Zahra!❤️</div>
+  <header>
+    Welcome to Your Special Website, Zuzu! 💖
+  </header>
+
+  <div class="container">
+    <nav class="tabs">
+      <a href="#home" onclick="showTab(event, 'home')">Home</a>
+      <a href="#photos" onclick="showTab(event, 'photos')">Photos</a>
+      <a href="#quotes" onclick="showTab(event, 'quotes')">Love Quotes</a>
+    </nav>
+
+    <section id="home" class="tab-content active">
+      <h2>Welcome, Zuzu!</h2>
+      <p>You are the most amazing person in the world. This website was made just for you to show how much you are loved. Explore the tabs to see what surprises await you! 💕</p>
+    </section>
+
+    <section id="photos" class="tab-content">
+      <h2>Your Beautiful Photos 📸</h2>
+      <div class="photos">
+        <div class="photo">
+          <img src="Screenshot 2025-01-24 105737.jpg" alt="Photo 1">
+          <p>You light up my world! 🌟</p>
+        </div>
+        <div class="photo">
+          <img src="Screenshot 2025-01-24 110252.jpg" alt="Photo 2">
+          <p>Your smile is everything. 😊</p>
+        </div>
+        <div class="photo">
+          <img src="Screenshot 2025-01-24 110324.jpg" alt="Photo 3">
+          <p>You are breathtaking! 😍</p>
+        </div>
+        <div class="photo">
+          <img src="Screenshot 2025-01-24 110644.jpg" alt="Photo 4">
+          <p>My heart belongs to you. 💕</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes" class="tab-content">
+      <h2>Love Quotes for You 💌</h2>
+      <div class="quotes">
+        <p><span>💖</span> "You are my sunshine, my only sunshine."
+        </p>
+        <p><span>💕</span> "I love you to the moon and back."
+        </p>
+        <p><span>🌸</span> "You make my heart skip a beat."
+        </p>
+        <p><span>🌟</span> "Every moment with you is magic."
+        </p>
+      </div>
+    </section>
   </div>
-  <footer>I love you habibti you deserve this 💖</footer>
+
+  <footer>
+    Made with endless love for you, Zuzu. 💖
+  </footer>
+
+  <script>
+    function showTab(event, tabId) {
+      event.preventDefault();
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
